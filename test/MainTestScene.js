@@ -3,6 +3,7 @@ var MainTestLayer = cc.Layer.extend({
         var winSize;
         var toastLabel, toastMenuItem, menu, title;
         var pixelLabel, pixelMenuItem;
+        var typingLabel, typingMenuItem;
 
         this._super();
 
@@ -25,7 +26,13 @@ var MainTestLayer = cc.Layer.extend({
             cc.director.runScene(scene);
         }, this);
 
-        menu = cc.Menu.create(toastMenuItem, pixelMenuItem);
+        typingLabel = cc.LabelTTF.create("[ csTypingLabel ]", "Arial", 18);
+        typingMenuItem = cc.MenuItemLabel.create(typingLabel, function() {
+            var scene = new csTypingLabelTestLayer();
+            cc.director.runScene(scene);
+        }, this);
+
+        menu = cc.Menu.create(toastMenuItem, pixelMenuItem, typingMenuItem);
         menu.alignItemsVerticallyWithPadding(15);
         menu.setPosition(winSize.width / 2, winSize.height / 2);
         this.addChild(menu);
@@ -41,3 +48,4 @@ var MainTestScene = cc.Scene.extend({
         this.addChild(layer);
     }
 });
+
