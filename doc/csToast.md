@@ -15,13 +15,13 @@ var winSize = cc.director.getWinSize();
 var toast = new csToast();
 toast.set({text : "text", 
            backgroundColor : cc.color(50, 50, 50, 255),
-           backgroundImage : "res/blue_button00.png"},
+           backgroundImage : "res/blue_button00.png",
            fontFillColor : cc.color(255, 255, 255, 255),
            fontSize : 15,
            fontName : "Arial",
            duration : 2,
            position : cc.p(winSize.width / 2, winSize.height / 2)           
-           );
+           });
 toast.run(this);
 ```
 
