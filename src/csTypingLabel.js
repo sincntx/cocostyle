@@ -46,7 +46,7 @@ var csTypingLabel = cc.LabelTTF.extend({
     run:function(duration) {
         this.schedule(this.onTyping, duration);
     },
-    stop:function(duration) {
+    stop:function() {
         this.unschedule(this.onTyping);
     },
     renew:function() {
