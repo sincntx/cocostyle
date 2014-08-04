@@ -22,6 +22,6 @@ else {
 }
 ```
 
-### Methods
+### Class Detail
 
-- `{Boolean} check(cc.Sprite sprite1, cc.Sprite sprite2)`
+- `{Boolean} csPixelCollisionk(cc.Sprite sprite1, cc.Sprite sprite2)`
