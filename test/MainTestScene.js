@@ -1,7 +1,8 @@
 var MainTestLayer = cc.Layer.extend({
     ctor:function () {
         var winSize;
-        var label, menuItem, menu, title;
+        var toastLabel, toastMenuItem, menu, title;
+        var pixelLabel, pixelMenuItem;
 
         this._super();
 
@@ -12,13 +13,20 @@ var MainTestLayer = cc.Layer.extend({
         title.setColor(cc.color(255, 255, 0, 255));
         this.addChild(title);
 
-        label = cc.LabelTTF.create("[ csToast ]", "Arial", 15);
-        menuItem = cc.MenuItemLabel.create(label, function() {
+        toastLabel = cc.LabelTTF.create("[ csToast ]", "Arial", 18);
+        toastMenuItem = cc.MenuItemLabel.create(toastLabel, function() {
             var scene = new csToastTestLayer();
             cc.director.runScene(scene);
         }, this);
 
-        menu = cc.Menu.create(menuItem);
+        pixelLabel = cc.LabelTTF.create("[ csPixelCollision ]", "Arial", 18);
+        pixelMenuItem = cc.MenuItemLabel.create(pixelLabel, function() {
+            var scene = new csPixelCollisionTestLayer();
+            cc.director.runScene(scene);
+        }, this);
+
+        menu = cc.Menu.create(toastMenuItem, pixelMenuItem);
+        menu.alignItemsVerticallyWithPadding(15);
         menu.setPosition(winSize.width / 2, winSize.height / 2);
         this.addChild(menu);
 
@@ -33,4 +41,3 @@ var MainTestScene = cc.Scene.extend({
         this.addChild(layer);
     }
 });
-
