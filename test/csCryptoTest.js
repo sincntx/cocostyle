@@ -25,13 +25,17 @@ var csCryptoTestLayer = cc.Layer.extend({
         menuItem.y = 25;
         this.addChild(menu);
 
-        var tlabel = cc.LabelTTF.create(csCrypto.md5("My name is typing label!!!!!"), "Arial", 30);
-        tlabel.setPosition(winSize.width / 2, winSize.height / 2);
+        var tlabel = cc.LabelTTF.create(csCrypto.md5("name"), "Arial", 30);
+        tlabel.setPosition(winSize.width / 2, winSize.height / 2 + 100);
         this.addChild(tlabel);
 
-        var tlabel2 = cc.LabelTTF.create(csCrypto.sha1("My name is typing label!!!!!"), "Arial", 30);
-        tlabel2.setPosition(winSize.width / 2, winSize.height / 2 - 100);
+        var tlabel2 = cc.LabelTTF.create(csCrypto.sha1("name"), "Arial", 30);
+        tlabel2.setPosition(winSize.width / 2, winSize.height / 2);
         this.addChild(tlabel2);
+
+        var tlabel3 = cc.LabelTTF.create(csCrypto.sha256('hex', "name"), "Arial", 30);
+        tlabel3.setPosition(winSize.width / 2, winSize.height / 2 - 100);
+        this.addChild(tlabel3);
 
         return true;
     }
