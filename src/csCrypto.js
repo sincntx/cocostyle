@@ -211,3 +211,161 @@ csCrypto.hex_hmac_md5 = function(k, d) {
 }
 
 csCrypto.sha1 = function(s){function U(a,b,c){while(0<c--)a.push(b)}function L(a,b){return(a<<b)|(a>>>(32-b))}function P(a,b,c){return a^b^c}function A(a,b){var c=(b&0xFFFF)+(a&0xFFFF),d=(b>>>16)+(a>>>16)+(c>>>16);return((d&0xFFFF)<<16)|(c&0xFFFF)}var B="0123456789abcdef";return(function(a){var c=[],d=a.length*4,e;for(var i=0;i<d;i++){e=a[i>>2]>>((3-(i%4))*8);c.push(B.charAt((e>>4)&0xF)+B.charAt(e&0xF))}return c.join('')}((function(a,b){var c,d,e,f,g,h=a.length,v=0x67452301,w=0xefcdab89,x=0x98badcfe,y=0x10325476,z=0xc3d2e1f0,M=[];U(M,0x5a827999,20);U(M,0x6ed9eba1,20);U(M,0x8f1bbcdc,20);U(M,0xca62c1d6,20);a[b>>5]|=0x80<<(24-(b%32));a[(((b+65)>>9)<<4)+15]=b;for(var i=0;i<h;i+=16){c=v;d=w;e=x;f=y;g=z;for(var j=0,O=[];j<80;j++){O[j]=j<16?a[j+i]:L(O[j-3]^O[j-8]^O[j-14]^O[j-16],1);var k=(function(a,b,c,d,e){var f=(e&0xFFFF)+(a&0xFFFF)+(b&0xFFFF)+(c&0xFFFF)+(d&0xFFFF),g=(e>>>16)+(a>>>16)+(b>>>16)+(c>>>16)+(d>>>16)+(f>>>16);return((g&0xFFFF)<<16)|(f&0xFFFF)})(j<20?(function(t,a,b){return(t&a)^(~t&b)}(d,e,f)):j<40?P(d,e,f):j<60?(function(t,a,b){return(t&a)^(t&b)^(a&b)}(d,e,f)):P(d,e,f),g,M[j],O[j],L(c,5));g=f;f=e;e=L(d,30);d=c;c=k}v=A(v,c);w=A(w,d);x=A(x,e);y=A(y,f);z=A(z,g)}return[v,w,x,y,z]}((function(t){var a=[],b=255,c=t.length*8;for(var i=0;i<c;i+=8){a[i>>5]|=(t.charCodeAt(i/8)&b)<<(24-(i%32))}return a}(s)).slice(),s.length*8))))}
+
+csCrypto.sha256 = function(mode, data) {
+    var blockLen = 64;
+    var stateTable = [ 	0x6a09e667 , 0xbb67ae85 , 0x3c6ef372 , 0xa54ff53a ,
+        0x510e527f , 0x9b05688c , 0x1f83d9ab , 0x5be0cd19 ];
+    var stateLen = stateTable.length;
+
+    var getMD = function(data) {
+        var datz = [];
+        if (isAry(data)) datz = data;
+        else if (isStr(data)) datz = unpack(data);
+        else "unknown type";
+        datz = paddingData(datz);
+        return round(datz);
+    }
+
+    var isAry = function(array) {
+        return array && array.constructor === [].constructor;
+    }
+
+    var isStr = function(str) {
+        return typeof(str) == typeof("string");
+    }
+
+    var rotr = function(v, s) { return (v >>> s) | (v << (32 - s)) };
+
+    var S0 = function(v) { return rotr(v,  2) ^ rotr(v, 13) ^ rotr(v, 22) };
+    var S1 = function(v) { return rotr(v,  6) ^ rotr(v, 11) ^ rotr(v, 25) };
+    var s0 = function(v) { return rotr(v,  7) ^ rotr(v, 18) ^ (v >>>  3) };
+    var s1 = function(v) { return rotr(v, 17) ^ rotr(v, 19) ^ (v >>> 10) };
+
+    var ch = function(_b, _c, _d) { return (_b & _c) ^ (~_b & _d) };
+    var maj = function(_b, _c, _d) { return (_b & _c) ^ (_b & _d) ^ (_c & _d) };
+
+    var round = function(block) {
+        var stt = [];
+        var tempS= [];
+        var i, j, temp1, temp2, x = [];
+        for (j=0; j<stateLen; j++) stt[j] = stateTable[j];
+
+        for (i=0; i<block.length; i+=blockLen)
+        {
+            for (j=0; j<stateLen; j++) tempS[j] = stt[j];
+            x = toBigEndian32( block.slice(i, i+ blockLen) );
+            for (j=16; j<64; j++)
+                x[j] = s1(x[ j-2 ]) + x[ j-7 ] + s0(x[ j-15 ]) + x[ j-16 ];
+
+            for (j=0; j<64; j++)
+            {
+                temp1 = stt[7] + S1(stt[4]) + ch( stt[4], stt[5], stt[6] ) + KTable[j] + x[j];
+                temp2 = S0(stt[0]) + maj( stt[0], stt[1], stt[2] );
+
+                stt[7] = stt[6];
+                stt[6] = stt[5];
+                stt[5] = stt[4];
+                stt[4] = stt[3] + temp1;
+                stt[3] = stt[2];
+                stt[2] = stt[1];
+                stt[1] = stt[0];
+                stt[0] = temp1 + temp2;
+            }
+            for (j=0; j<stateLen; j++) stt[j] += tempS[j];
+        }
+
+        return fromBigEndian32(stt);
+    }
+
+    var paddingData = function(datas) {
+        var dataLen = datas.length;
+        var n = dataLen;
+        datas[n++] = 0x80;
+        while (n% blockLen != 56) datas[n++] = 0;
+        dataLen *= 8;
+        return datas.concat(0, 0, 0, 0, fromBigEndian32([dataLen]) );
+    }
+
+    var toHex = function(decs) {
+        var i, hex = "";
+
+        for (i=0; i<decs.length; i++)
+            hex += (decs[i]>0xf?"":"0")+ decs[i].toString(16);
+        return hex;
+    }
+
+    var fromBigEndian32 = function(block) {
+        var temp = [];
+        for (n=i=0; i<block.length; i++)
+        {
+            temp[n++] = (block[i] >>> 24) & 0xff;
+            temp[n++] = (block[i] >>> 16) & 0xff;
+            temp[n++] = (block[i] >>>  8) & 0xff;
+            temp[n++] = block[i] & 0xff;
+        }
+        return temp;
+    }
+
+    var toBigEndian32 = function(block) {
+        var temp = [];
+        var i, n;
+        for (n=i=0; i<block.length; i+=4, n++)
+            temp[n] = (block[i]<<24) | (block[i+ 1]<<16) | (block[i+ 2]<<8) | block[i+ 3];
+        return temp;
+    }
+
+    var unpack = function(data) {
+        var i, n, c, temp = [];
+
+        for (n=i=0; i<data.length; i++)
+        {
+            c = data.charCodeAt(i);
+            if (c <= 0xff) temp[n++] = c;
+            else {
+                temp[n++] = c >>> 8;
+                temp[n++] = c &  0xff;
+            }
+        }
+        return temp;
+    }
+
+    var pack = function(array) {
+        var i, temp = "";
+        for (i in array) temp += String.fromCharCode(array[i]);
+        return temp;
+    }
+
+    var KTable = [
+        0x428a2f98 , 0x71374491 , 0xb5c0fbcf , 0xe9b5dba5 ,
+        0x3956c25b , 0x59f111f1 , 0x923f82a4 , 0xab1c5ed5 ,
+        0xd807aa98 , 0x12835b01 , 0x243185be , 0x550c7dc3 ,
+        0x72be5d74 , 0x80deb1fe , 0x9bdc06a7 , 0xc19bf174 ,
+
+        0xe49b69c1 , 0xefbe4786 , 0x0fc19dc6 , 0x240ca1cc ,
+        0x2de92c6f , 0x4a7484aa , 0x5cb0a9dc , 0x76f988da ,
+        0x983e5152 , 0xa831c66d , 0xb00327c8 , 0xbf597fc7 ,
+        0xc6e00bf3 , 0xd5a79147 , 0x06ca6351 , 0x14292967 ,
+
+        0x27b70a85 , 0x2e1b2138 , 0x4d2c6dfc , 0x53380d13 ,
+        0x650a7354 , 0x766a0abb , 0x81c2c92e , 0x92722c85 ,
+        0xa2bfe8a1 , 0xa81a664b , 0xc24b8b70 , 0xc76c51a3 ,
+        0xd192e819 , 0xd6990624 , 0xf40e3585 , 0x106aa070 ,
+
+        0x19a4c116 , 0x1e376c08 , 0x2748774c , 0x34b0bcb5 ,
+        0x391c0cb3 , 0x4ed8aa4a , 0x5b9cca4f , 0x682e6ff3 ,
+        0x748f82ee , 0x78a5636f , 0x84c87814 , 0x8cc70208 ,
+        0x90befffa , 0xa4506ceb , 0xbef9a3f7 , 0xc67178f2
+    ];
+
+    if(mode == 'hex') {
+        return toHex(getMD(data) );
+    }
+    else if(mode == 'dec') {
+        return getMD(data);
+    }
+    else if(mode == 'bin') {
+        return pack(getMD(data) );
+    }
+
+}
