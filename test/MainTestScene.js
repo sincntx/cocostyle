@@ -4,6 +4,7 @@ var MainTestLayer = cc.Layer.extend({
         var toastLabel, toastMenuItem, menu, title;
         var pixelLabel, pixelMenuItem;
         var typingLabel, typingMenuItem;
+        var labelEXTLabel, labelEXTMenuItem;
 
         this._super();
 
@@ -32,7 +33,13 @@ var MainTestLayer = cc.Layer.extend({
             cc.director.runScene(scene);
         }, this);
 
-        menu = cc.Menu.create(toastMenuItem, pixelMenuItem, typingMenuItem);
+        labelEXTLabel = cc.LabelTTF.create("[ csLabelTTFExt ]", "Arial", 18);
+        labelEXTMenuItem = cc.MenuItemLabel.create(labelEXTLabel, function() {
+            var scene = new csLabelTTFExtTestLayer();
+            cc.director.runScene(scene);
+        }, this);
+
+        menu = cc.Menu.create(toastMenuItem, pixelMenuItem, typingMenuItem, labelEXTMenuItem);
         menu.alignItemsVerticallyWithPadding(15);
         menu.setPosition(winSize.width / 2, winSize.height / 2);
         this.addChild(menu);
