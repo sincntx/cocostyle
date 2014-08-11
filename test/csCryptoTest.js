@@ -29,6 +29,10 @@ var csCryptoTestLayer = cc.Layer.extend({
         tlabel.setPosition(winSize.width / 2, winSize.height / 2);
         this.addChild(tlabel);
 
+        var tlabel2 = cc.LabelTTF.create(csCrypto.sha1("My name is typing label!!!!!"), "Arial", 30);
+        tlabel2.setPosition(winSize.width / 2, winSize.height / 2 - 100);
+        this.addChild(tlabel2);
+
         return true;
     }
 });
