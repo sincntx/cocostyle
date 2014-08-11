@@ -5,6 +5,7 @@ var MainTestLayer = cc.Layer.extend({
         var pixelLabel, pixelMenuItem;
         var typingLabel, typingMenuItem;
         var labelEXTLabel, labelEXTMenuItem;
+        var cryptoLabel, cryptoMenuItem;
 
         this._super();
 
@@ -39,7 +40,13 @@ var MainTestLayer = cc.Layer.extend({
             cc.director.runScene(scene);
         }, this);
 
-        menu = cc.Menu.create(toastMenuItem, pixelMenuItem, typingMenuItem, labelEXTMenuItem);
+        cryptoLabel = cc.LabelTTF.create("[ csCrypto ]", "Arial", 18);
+        cryptoMenuItem = cc.MenuItemLabel.create(cryptoLabel, function() {
+            var scene = new csCryptoTestLayer();
+            cc.director.runScene(scene);
+        }, this);
+
+        menu = cc.Menu.create(toastMenuItem, pixelMenuItem, typingMenuItem, labelEXTMenuItem, cryptoMenuItem);
         menu.alignItemsVerticallyWithPadding(15);
         menu.setPosition(winSize.width / 2, winSize.height / 2);
         this.addChild(menu);
