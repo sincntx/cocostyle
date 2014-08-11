@@ -22,3 +22,4 @@ tlabel.run(0.05);
 - `stop()`
 - `renew()`
 - And cc.LabelTTF methods
+- It's only work on HTML5.
