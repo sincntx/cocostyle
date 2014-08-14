@@ -4,6 +4,7 @@ var MainTestLayer = cc.Layer.extend({
         var toastLabel, toastMenuItem, menu, title;
         var pixelLabel, pixelMenuItem;
         var typingLabel, typingMenuItem;
+        var typingExtLabel, typingExtMenuItem;
         var labelEXTLabel, labelEXTMenuItem;
         var cryptoLabel, cryptoMenuItem;
 
@@ -34,6 +35,12 @@ var MainTestLayer = cc.Layer.extend({
             cc.director.runScene(scene);
         }, this);
 
+        typingExtLabel = cc.LabelTTF.create("[ csTypingLabelExt ]", "Arial", 18);
+        typingExtMenuItem = cc.MenuItemLabel.create(typingExtLabel, function() {
+            var scene = new csTypingLabelExtTestLayer();
+            cc.director.runScene(scene);
+        }, this);
+
         labelEXTLabel = cc.LabelTTF.create("[ csLabelTTFExt ]", "Arial", 18);
         labelEXTMenuItem = cc.MenuItemLabel.create(labelEXTLabel, function() {
             var scene = new csLabelTTFExtTestLayer();
@@ -46,7 +53,7 @@ var MainTestLayer = cc.Layer.extend({
             cc.director.runScene(scene);
         }, this);
 
-        menu = cc.Menu.create(toastMenuItem, pixelMenuItem, typingMenuItem, labelEXTMenuItem, cryptoMenuItem);
+        menu = cc.Menu.create(toastMenuItem, pixelMenuItem, typingMenuItem, typingExtMenuItem, labelEXTMenuItem, cryptoMenuItem);
         menu.alignItemsVerticallyWithPadding(15);
         menu.setPosition(winSize.width / 2, winSize.height / 2);
         this.addChild(menu);
