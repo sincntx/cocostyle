@@ -7,13 +7,13 @@ var csToastTestLayer = cc.Layer.extend({
 
         winSize = cc.director.getWinSize();
 
-        title = cc.LabelTTF.create("Cocostyle Toast Test", "Arial", 20);
+        title = new cc.LabelTTF("Cocostyle Toast Test", "Arial", 20);
         title.setPosition(winSize.width / 2, winSize.height - 40);
         title.setColor(cc.color(255, 255, 0, 255));
         this.addChild(title);
 
-        label = cc.LabelTTF.create("[ Main Menu ]", "Arial", 15);
-        menuItem = cc.MenuItemLabel.create(label, function() {
+        label = new cc.LabelTTF("[ Main Menu ]", "Arial", 15);
+        menuItem = new cc.MenuItemLabel(label, function() {
             var scene = new MainTestLayer();
             cc.director.runScene(scene);
         }, this);

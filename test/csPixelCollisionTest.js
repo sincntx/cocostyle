@@ -11,33 +11,33 @@ var csPixelCollisionTestLayer = cc.Layer.extend({
 
         winSize = cc.director.getWinSize();
 
-        title = cc.LabelTTF.create("Cocostyle Pixel Collision Test", "Arial", 20);
+        title = new cc.LabelTTF("Cocostyle Pixel Collision Test", "Arial", 20);
         title.setPosition(winSize.width / 2, winSize.height - 40);
         title.setColor(cc.color(255, 255, 0, 255));
         this.addChild(title);
 
-        label = cc.LabelTTF.create("[ Main Menu ]", "Arial", 15);
-        menuItem = cc.MenuItemLabel.create(label, function() {
+        label = new cc.LabelTTF("[ Main Menu ]", "Arial", 15);
+        menuItem = new cc.MenuItemLabel(label, function() {
             var scene = new MainTestLayer();
             cc.director.runScene(scene);
         }, this);
 
-        menu = cc.Menu.create(menuItem);
+        menu = new cc.Menu(menuItem);
         menu.x = 0;
         menu.y = 0;
         menuItem.x = winSize.width - 70;
         menuItem.y = 25;
         this.addChild(menu);
 
-        sprite1 = cc.Sprite.create("src/res/grossini.png");
+        sprite1 = new cc.Sprite(res.Grosssini_png);
         sprite1.setPosition(cc.p(winSize.width / 2, winSize.height / 2));
         this.addChild(sprite1);
 
-        sprite2 = cc.Sprite.create("src/res/grossini.png");
+        sprite2 = new cc.Sprite(res.Grosssini_png);
         sprite2.setPosition(cc.p(100, winSize.height / 2));
         this.addChild(sprite2);
 
-        spriteLabel = cc.LabelTTF.create("Touch and move", "Arial", 10);
+        spriteLabel = new cc.LabelTTF("Touch and move", "Arial", 10);
         spriteLabel.setAnchorPoint(cc.p(0, 1));
         sprite2.addChild(spriteLabel);
 

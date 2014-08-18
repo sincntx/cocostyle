@@ -9,9 +9,9 @@ var csToast = cc.Layer.extend({
 
         this._super();
 
-        _backgroundChild = cc.LayerColor.create(cc.color(50, 50, 50, 255));
+        _backgroundChild = new cc.LayerColor(cc.color(50, 50, 50, 255));
         _backgroundChild.setLocalZOrder(1);
-        _labelChild = cc.LabelTTF.create("", "Arial", 15);
+        _labelChild = new cc.LabelTTF("", "Arial", 15);
         _labelChild.setLocalZOrder(3);
         _backgroundImageCheck = false;
 
@@ -71,14 +71,14 @@ var csToast = cc.Layer.extend({
         var winSize = cc.director.getWinSize();
 
         if(_backgroundImageCheck) {
-            var sprite = cc.Sprite.create(backgroundImage);
+            var sprite = new cc.Sprite(backgroundImage);
 
             _backgroundImage.setTexture(sprite.texture);
             _backgroundImage.setScaleX((_labelChild.getContentSize().width + (winSize.width / 20)) / _backgroundImage.getContentSize().width);
             _backgroundImage.setScaleY((_labelChild.getContentSize().height + + (winSize.height / 20)) / _backgroundImage.getContentSize().height);
         }
         else {
-            _backgroundImage = cc.Sprite.create(backgroundImage);
+            _backgroundImage = new cc.Sprite(backgroundImage);
             _backgroundImage.setScaleX((_labelChild.getContentSize().width + (winSize.width / 20)) / _backgroundImage.getContentSize().width);
             _backgroundImage.setScaleY((_labelChild.getContentSize().height + + (winSize.height / 20)) / _backgroundImage.getContentSize().height);
             _backgroundImage.setLocalZOrder(2);
@@ -128,15 +128,15 @@ var csToast = cc.Layer.extend({
         return _duration;
     },
     run:function(parent) {
-        var childFadeInAction = cc.FadeIn.create(0.5);
-        var childFadeOutAction = cc.FadeOut.create(0.5);
-        var childDelayAction = cc.DelayTime.create(this._duration);
-        var toastDelayAction = cc.DelayTime.create(this._duration + 1);
-        var toastFinishAction = cc.CallFunc.create(function() {
+        var childFadeInAction = new cc.FadeIn(0.5);
+        var childFadeOutAction = new cc.FadeOut(0.5);
+        var childDelayAction = new cc.DelayTime(this._duration);
+        var toastDelayAction = new cc.DelayTime(this._duration + 1);
+        var toastFinishAction = new cc.CallFunc(function() {
             this.removeFromParent(true);
         }, this);
-        var childSequenceAction = cc.Sequence.create(childFadeInAction, childDelayAction, childFadeOutAction);
-        var toastSequenceAction = cc.Sequence.create(toastDelayAction, toastFinishAction);
+        var childSequenceAction = new cc.Sequence(childFadeInAction, childDelayAction, childFadeOutAction);
+        var toastSequenceAction = new cc.Sequence(toastDelayAction, toastFinishAction);
 
         _labelChild.setOpacity(0);
         _labelChild.runAction(childSequenceAction.clone());

@@ -11,8 +11,8 @@ isCollision = csPixelCollision(sprite1, sprite2);
 ### How to use
 
 ```
-var sprite1 = cc.Sprite.create("src/res/grossini.png");
-var sprite2 = cc.Sprite.create("src/res/grossini.png");
+var sprite1 = new cc.Sprite("src/res/grossini.png");
+var sprite2 = new cc.Sprite("src/res/grossini.png");
 
 if(csPixelCollision(sprite1, sprite2)) {
     cc.log('true');

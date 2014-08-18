@@ -12,48 +12,48 @@ var MainTestLayer = cc.Layer.extend({
 
         winSize = cc.director.getWinSize();
 
-        title = cc.LabelTTF.create("Cocostyle Test List", "Arial", 20);
+        title = new cc.LabelTTF("Cocostyle Test List", "Arial", 20);
         title.setPosition(winSize.width / 2, winSize.height - 40);
         title.setColor(cc.color(255, 255, 0, 255));
         this.addChild(title);
 
-        toastLabel = cc.LabelTTF.create("[ csToast ]", "Arial", 18);
-        toastMenuItem = cc.MenuItemLabel.create(toastLabel, function() {
+        toastLabel = new cc.LabelTTF("[ csToast ]", "Arial", 18);
+        toastMenuItem = new cc.MenuItemLabel(toastLabel, function() {
             var scene = new csToastTestLayer();
             cc.director.runScene(scene);
         }, this);
 
-        pixelLabel = cc.LabelTTF.create("[ csPixelCollision ]", "Arial", 18);
-        pixelMenuItem = cc.MenuItemLabel.create(pixelLabel, function() {
+        pixelLabel = new cc.LabelTTF("[ csPixelCollision ]", "Arial", 18);
+        pixelMenuItem = new cc.MenuItemLabel(pixelLabel, function() {
             var scene = new csPixelCollisionTestLayer();
             cc.director.runScene(scene);
         }, this);
 
-        typingLabel = cc.LabelTTF.create("[ csTypingLabel ]", "Arial", 18);
-        typingMenuItem = cc.MenuItemLabel.create(typingLabel, function() {
+        typingLabel = new cc.LabelTTF("[ csTypingLabel ]", "Arial", 18);
+        typingMenuItem = new cc.MenuItemLabel(typingLabel, function() {
             var scene = new csTypingLabelTestLayer();
             cc.director.runScene(scene);
         }, this);
 
-        typingExtLabel = cc.LabelTTF.create("[ csTypingLabelExt ]", "Arial", 18);
-        typingExtMenuItem = cc.MenuItemLabel.create(typingExtLabel, function() {
+        typingExtLabel = new cc.LabelTTF("[ csTypingLabelExt ]", "Arial", 18);
+        typingExtMenuItem = new cc.MenuItemLabel(typingExtLabel, function() {
             var scene = new csTypingLabelExtTestLayer();
             cc.director.runScene(scene);
         }, this);
 
-        labelEXTLabel = cc.LabelTTF.create("[ csLabelTTFExt ]", "Arial", 18);
-        labelEXTMenuItem = cc.MenuItemLabel.create(labelEXTLabel, function() {
+        labelEXTLabel = new cc.LabelTTF("[ csLabelTTFExt ]", "Arial", 18);
+        labelEXTMenuItem = new cc.MenuItemLabel(labelEXTLabel, function() {
             var scene = new csLabelTTFExtTestLayer();
             cc.director.runScene(scene);
         }, this);
 
-        cryptoLabel = cc.LabelTTF.create("[ csCrypto ]", "Arial", 18);
-        cryptoMenuItem = cc.MenuItemLabel.create(cryptoLabel, function() {
+        cryptoLabel = new cc.LabelTTF("[ csCrypto ]", "Arial", 18);
+        cryptoMenuItem = new cc.MenuItemLabel(cryptoLabel, function() {
             var scene = new csCryptoTestLayer();
             cc.director.runScene(scene);
         }, this);
 
-        menu = cc.Menu.create(toastMenuItem, pixelMenuItem, typingMenuItem, typingExtMenuItem, labelEXTMenuItem, cryptoMenuItem);
+        menu = new cc.Menu(toastMenuItem, pixelMenuItem, typingMenuItem, typingExtMenuItem, labelEXTMenuItem, cryptoMenuItem);
         menu.alignItemsVerticallyWithPadding(15);
         menu.setPosition(winSize.width / 2, winSize.height / 2);
         this.addChild(menu);
