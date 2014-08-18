@@ -1,0 +1,30 @@
+{
+    "project_type": "javascript",
+
+    "debugMode" : 1,
+    "showFPS" : true,
+    "frameRate" : 60,
+    "id" : "gameCanvas",
+    "renderMode" : 0,
+    "engineDir":"frameworks/cocos2d-html5",
+
+    "modules" : ["cocos2d"],
+
+    "jsList" : [
+        "src/csToast.js",
+        "src/csPixelCollision.js",
+        "src/csTypingLabel.js",
+        "src/csTypingLabelExt.js",
+        "src/csLabelTTFExt.js",
+        "src/csCrypto.js",
+
+        "test/resource.js",
+        "test/MainTestScene.js",
+        "test/csToastTest.js",
+        "test/csPixelCollisionTest.js",
+        "test/csTypingLabelTest.js",
+        "test/csTypingLabelExtTest.js",
+        "test/csLabelTTFExtTest.js",
+        "test/csCryptoTest.js"
+    ]
+}
