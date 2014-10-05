@@ -17,14 +17,16 @@
         "src/csTypingLabelExt.js",
         "src/csLabelTTFExt.js",
         "src/csCrypto.js",
+        "src/csAlert.js",
 
-        "test/resource.js",
-        "test/MainTestScene.js",
-        "test/csToastTest.js",
-        "test/csPixelCollisionTest.js",
-        "test/csTypingLabelTest.js",
-        "test/csTypingLabelExtTest.js",
-        "test/csLabelTTFExtTest.js",
-        "test/csCryptoTest.js"
+        "src/tests/resource.js",
+        "src/tests/MainTestScene.js",
+        "src/tests/csToastTest.js",
+        "src/tests/csPixelCollisionTest.js",
+        "src/tests/csTypingLabelTest.js",
+        "src/tests/csTypingLabelExtTest.js",
+        "src/tests/csLabelTTFExtTest.js",
+        "src/tests/csCryptoTest.js",
+        "src/tests/csAlertTest.js"
     ]
 }
