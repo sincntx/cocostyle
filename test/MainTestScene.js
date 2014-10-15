@@ -7,6 +7,8 @@ var MainTestLayer = cc.Layer.extend({
         var typingExtLabel, typingExtMenuItem;
         var labelEXTLabel, labelEXTMenuItem;
         var cryptoLabel, cryptoMenuItem;
+        var alertLabel, alertMenuItem;
+        var videoLabel, videoMenuItem;
 
         this._super();
 
@@ -53,7 +55,19 @@ var MainTestLayer = cc.Layer.extend({
             cc.director.runScene(scene);
         }, this);
 
-        menu = new cc.Menu(toastMenuItem, pixelMenuItem, typingMenuItem, typingExtMenuItem, labelEXTMenuItem, cryptoMenuItem);
+        alertLabel = new cc.LabelTTF("[ csAlert ]", "Arial", 18);
+        alertMenuItem = new cc.MenuItemLabel(alertLabel, function() {
+            var scene = new csAlertTestLayer();
+            cc.director.runScene(scene);
+        }, this);
+        
+        videoLabel = new cc.LabelTTF("[ csVideo ]", "Arial", 18);
+        videoMenuItem = new cc.MenuItemLabel(videoLabel, function() {
+            var scene = new csVideoTestLayer();
+            cc.director.runScene(scene);
+        }, this);
+        
+        menu = new cc.Menu(toastMenuItem, pixelMenuItem, typingMenuItem, typingExtMenuItem, labelEXTMenuItem, cryptoMenuItem, alertMenuItem, videoMenuItem);
         menu.alignItemsVerticallyWithPadding(15);
         menu.setPosition(winSize.width / 2, winSize.height / 2);
         this.addChild(menu);
