@@ -13,5 +13,8 @@ video.video.play();
 
 - {HTML5 Video} video
 - And cc.Node fileds
+
+### Notice
+
 - It's only work on HTML5.
 - Required "frameworks/cocos2d-html5/extensions/editbox/CCdomNode.js"
