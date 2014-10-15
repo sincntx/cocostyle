@@ -18,3 +18,5 @@ cocostyle is a UI framework for [cocos2d-js](https://github.com/cocos2d/cocos2d-
 -[csCrypto](doc/csCrypto.md)
 
 -[csAlert](doc/csAlert.md)
+
+-[csVideo](doc/csVideo.md)
