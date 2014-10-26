@@ -3,7 +3,7 @@ cocostyle
 
 cocostyle is a UI framework for [cocos2d-js](https://github.com/cocos2d/cocos2d-js) and licensed under [MIT](./LICENSE).
 
-### Features
+## Features
 |Name|Description|
 |---|---|
 |csToast|a quick little message.|
@@ -15,20 +15,24 @@ cocostyle is a UI framework for [cocos2d-js](https://github.com/cocos2d/cocos2d-
 |csAlert|a simple alert window.|
 |csVideo|a video player as cocos2d sprite.|
 
-### Documentations
+## Documentations
 
--[csToast](doc/csToast.md)
+- [csToast](doc/csToast.md)
 
--[csPixelCollision](doc/csPixelCollision.md)
+- [csPixelCollision](doc/csPixelCollision.md)
 
--[csTypingLabel](doc/csTypingLabel.md)
+- [csTypingLabel](doc/csTypingLabel.md)
 
--[csTypingLabelExt](doc/csTypingLabelExt.md)
+- [csTypingLabelExt](doc/csTypingLabelExt.md)
 
--[csLabelTTFExt](doc/csLabelTTFExt.md)
+- [csLabelTTFExt](doc/csLabelTTFExt.md)
 
--[csCrypto](doc/csCrypto.md)
+- [csCrypto](doc/csCrypto.md)
 
--[csAlert](doc/csAlert.md)
+- [csAlert](doc/csAlert.md)
 
--[csVideo](doc/csVideo.md)
+- [csVideo](doc/csVideo.md)
+
+## Online Test Cases
+
+- [http://htmlfive.co.kr/cocostyle/](http://htmlfive.co.kr/cocostyle/)
