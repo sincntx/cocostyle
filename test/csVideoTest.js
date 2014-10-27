@@ -26,10 +26,13 @@ var csVideoTestLayer = cc.Layer.extend({
 
         var video = new csVideo('http://www.w3schools.com/html/mov_bbb.mp4');
         video.setPosition(cc.p(winSize.width / 2, winSize.height));
-        video.setRotation(100);
-        video.runAction(new cc.ScaleTo(2, 2));
         video.video.play();
         this.addChild(video);
+
+        video.rotation = 100;
+        video.runAction( new cc.Sequence( new cc.ScaleTo(0.5, 3), new cc.ScaleTo(0.5, 0.1), new cc.ScaleTo(0.5, 1), new cc.FadeOut(0.5), new cc.FadeIn(0.5), new cc.CallFunc(function(obj) {
+            obj.rotation = 0;
+        }, this) ) );
 
         return true;
     }
