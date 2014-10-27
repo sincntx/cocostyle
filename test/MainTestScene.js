@@ -9,6 +9,7 @@ var MainTestLayer = cc.Layer.extend({
         var cryptoLabel, cryptoMenuItem;
         var alertLabel, alertMenuItem;
         var videoLabel, videoMenuItem;
+        var iframeLabel, iframeMenuItem;
 
         this._super();
 
@@ -60,14 +61,20 @@ var MainTestLayer = cc.Layer.extend({
             var scene = new csAlertTestLayer();
             cc.director.runScene(scene);
         }, this);
-        
+
         videoLabel = new cc.LabelTTF("[ csVideo ]", "Arial", 18);
         videoMenuItem = new cc.MenuItemLabel(videoLabel, function() {
             var scene = new csVideoTestLayer();
             cc.director.runScene(scene);
         }, this);
-        
-        menu = new cc.Menu(toastMenuItem, pixelMenuItem, typingMenuItem, typingExtMenuItem, labelEXTMenuItem, cryptoMenuItem, alertMenuItem, videoMenuItem);
+
+        iframeLabel = new cc.LabelTTF("[ csIFrame ]", "Arial", 18);
+        iframeMenuItem = new cc.MenuItemLabel(iframeLabel, function() {
+            var scene = new csIframeTestLayer();
+            cc.director.runScene(scene);
+        }, this);
+
+        menu = new cc.Menu(toastMenuItem, pixelMenuItem, typingMenuItem, typingExtMenuItem, labelEXTMenuItem, cryptoMenuItem, alertMenuItem, videoMenuItem, iframeMenuItem);
         menu.alignItemsVerticallyWithPadding(15);
         menu.setPosition(winSize.width / 2, winSize.height / 2);
         this.addChild(menu);
@@ -83,4 +90,3 @@ var MainTestScene = cc.Scene.extend({
         this.addChild(layer);
     }
 });
-
