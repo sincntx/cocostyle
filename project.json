@@ -19,6 +19,7 @@
         "src/csCrypto.js",
         "src/csAlert.js",
         "src/csVideo.js",
+        "src/csIframe.js",
         "frameworks/cocos2d-html5/extensions/editbox/CCdomNode.js",
 
         "test/resource.js",
@@ -30,6 +31,7 @@
         "test/csLabelTTFExtTest.js",
         "test/csCryptoTest.js",
         "test/csAlertTest.js",
-        "test/csVideoTest.js"
+        "test/csVideoTest.js",
+        "test/csIframeTest.js"
     ]
 }
