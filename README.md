@@ -1,4 +1,4 @@
-cocostyle
+<img src="https://cloud.githubusercontent.com/assets/6089788/4805736/1632b6fe-5e81-11e4-98fb-51f3ace6a375.png"> 
 =========
 
 cocostyle is a UI framework for [cocos2d-js](https://github.com/cocos2d/cocos2d-js) and licensed under [MIT](./LICENSE).
