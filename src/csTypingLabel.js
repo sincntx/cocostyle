@@ -1,5 +1,6 @@
 var csTypingLabel = cc.LabelTTF.extend({
     _originalString:'',
+    _string:'',
     _nowCur:0,
     ctor: function (text, fontName, fontSize, dimensions, hAlignment, vAlignment) {
         cc.LabelTTF.prototype.ctor.call(this);
@@ -32,7 +33,7 @@ var csTypingLabel = cc.LabelTTF.extend({
         this._lineWidths = [];
 
         this._originalString = text;
-        text = '';
+        text = ' ';
 
         this._setColorsString();
 
@@ -50,12 +51,17 @@ var csTypingLabel = cc.LabelTTF.extend({
         this.unschedule(this.onTyping);
     },
     renew:function() {
-        this.setString('');
+        this.setString(' ');
         this._nowCur  = 0;
     },
     onTyping:function() {
         if(this.getString().length < this._originalString.length) {
-            this.setString(this.getString() + this._originalString[this._nowCur]);
+            if(this.getString() == ' ') {
+                this.setString(this._originalString[this._nowCur]);
+            }
+            else {
+                this.setString(this.getString() + this._originalString[this._nowCur]);
+            }
             this._nowCur++;
         }
         else {
