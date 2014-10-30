@@ -68,7 +68,7 @@ var MainTestLayer = cc.Layer.extend({
             cc.director.runScene(scene);
         }, this);
 
-        iframeLabel = new cc.LabelTTF("[ csIFrame ]", "Arial", 18);
+        iframeLabel = new cc.LabelTTF("[ csIframe ]", "Arial", 18);
         iframeMenuItem = new cc.MenuItemLabel(iframeLabel, function() {
             var scene = new csIframeTestLayer();
             cc.director.runScene(scene);
