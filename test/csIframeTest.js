@@ -6,7 +6,7 @@ var csIframeTestLayer = cc.Layer.extend({
 
         winSize = cc.director.getWinSize();
 
-        title = new cc.LabelTTF("Cocostyle Video Test", "Arial", 20);
+        title = new cc.LabelTTF("Cocostyle Iframe Test", "Arial", 20);
         title.setPosition(winSize.width / 2, winSize.height - 40);
         title.setColor(cc.color(255, 255, 0, 255));
         this.addChild(title);
