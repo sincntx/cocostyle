@@ -18,23 +18,23 @@ cocostyle은 [cocos2d-js](https://github.com/cocos2d/cocos2d-js)의 UI 프레임
 
 ## 문서
 
-- [csToast](doc/csToast.md)
+- [csToast](doc/csToast_ko.md)
 
-- [csPixelCollision](doc/csPixelCollision.md)
+- [csPixelCollision](doc/csPixelCollision_ko.md)
 
-- [csTypingLabel](doc/csTypingLabel.md)
+- [csTypingLabel](doc/csTypingLabel_ko.md)
 
-- [csTypingLabelExt](doc/csTypingLabelExt.md)
+- [csTypingLabelExt](doc/csTypingLabelExt_ko.md)
 
-- [csLabelTTFExt](doc/csLabelTTFExt.md)
+- [csLabelTTFExt](doc/csLabelTTFExt_ko.md)
 
-- [csCrypto](doc/csCrypto.md)
+- [csCrypto](doc/csCrypto_ko.md)
 
-- [csAlert](doc/csAlert.md)
+- [csAlert](doc/csAlert_ko.md)
 
-- [csVideo](doc/csVideo.md)
+- [csVideo](doc/csVideo_ko.md)
 
-- [csIframe](doc/csIframe.md)
+- [csIframe](doc/csIframe_ko.md)
 
 ## 온라인 테스트 케이스
 
