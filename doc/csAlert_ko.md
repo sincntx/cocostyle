@@ -1,7 +1,7 @@
 csAlert
 =========
 
-### 빠른 시작
+### 일단 해보기
 
 ```
 var alert = new csAlert('this is alert!', function() {
