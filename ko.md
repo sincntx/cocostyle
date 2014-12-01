@@ -15,6 +15,8 @@ cocostyle은 [cocos2d-js](https://github.com/cocos2d/cocos2d-js)의 UI 프레임
 |csAlert|간단한 경고창.|
 |csVideo|스프라이트처럼 사용 가능한 비디오 플레이어.|
 |csIframe|스프라이트처럼 사용 가능한 iFrame.|
+|csCanvasAntiAlising|캔버스 안티 앨리어싱.|
+|csValidator|이메일, URL, IP, UUID 등 검증.|
 
 ## 문서
 
@@ -35,6 +37,10 @@ cocostyle은 [cocos2d-js](https://github.com/cocos2d/cocos2d-js)의 UI 프레임
 - [csVideo](doc/csVideo_ko.md)
 
 - [csIframe](doc/csIframe_ko.md)
+- 
+- [csCanvasAntiAlising](doc/csCanvasAntiAlising_ko.md)
+
+- [csValidator](doc/csValidator_ko.md)
 
 ## 온라인 테스트 케이스
 
