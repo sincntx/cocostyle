@@ -5,7 +5,7 @@
     "showFPS" : true,
     "frameRate" : 60,
     "id" : "gameCanvas",
-    "renderMode" : 0,
+    "renderMode" : 1,
     "engineDir":"frameworks/cocos2d-html5",
 
     "modules" : ["cocos2d"],
@@ -21,6 +21,7 @@
         "src/csVideo.js",
         "src/csIframe.js",
         "frameworks/cocos2d-html5/extensions/editbox/CCdomNode.js",
+        "src/csValidator.js",
 
         "test/resource.js",
         "test/MainTestScene.js",
@@ -32,6 +33,7 @@
         "test/csCryptoTest.js",
         "test/csAlertTest.js",
         "test/csVideoTest.js",
-        "test/csIframeTest.js"
+        "test/csIframeTest.js",
+        "test/csValidatorTest.js"
     ]
 }
