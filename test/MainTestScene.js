@@ -1,17 +1,8 @@
 var MainTestLayer = cc.Layer.extend({
     ctor:function () {
         var winSize;
-        var toastLabel, toastMenuItem, menu, title;
-        var pixelLabel, pixelMenuItem;
-        var typingLabel, typingMenuItem;
-        var typingExtLabel, typingExtMenuItem;
-        var labelEXTLabel, labelEXTMenuItem;
-        var cryptoLabel, cryptoMenuItem;
-        var alertLabel, alertMenuItem;
-        var videoLabel, videoMenuItem;
-        var iframeLabel, iframeMenuItem;
-        var caaLabel, caaMenuItem;
-        var validatorLabel, validatorMenuItem;
+        var menu, title;
+        var menuItemList;
 
         this._super();
 
@@ -23,74 +14,70 @@ var MainTestLayer = cc.Layer.extend({
         title.color = cc.color(255, 255, 0);
         this.addChild(title);
 
-        toastLabel = new cc.LabelTTF("[ csToast ]", "Arial", 15);
-        toastMenuItem = new cc.MenuItemLabel(toastLabel, function() {
+        menuItemList = [];
+
+        menuItemList.push(new cc.MenuItemLabel(new cc.LabelTTF("[ csToast ]", "Arial", 15), function() {
             var scene = new csToastTestLayer();
             cc.director.runScene(scene);
-        }, this);
+        }, this));
 
-        pixelLabel = new cc.LabelTTF("[ csPixelCollision ]", "Arial", 15);
-        pixelMenuItem = new cc.MenuItemLabel(pixelLabel, function() {
+        menuItemList.push(new cc.MenuItemLabel(new cc.LabelTTF("[ csPixelCollision ]", "Arial", 15), function() {
             var scene = new csPixelCollisionTestLayer();
             cc.director.runScene(scene);
-        }, this);
+        }, this));
 
-        typingLabel = new cc.LabelTTF("[ csTypingLabel ]", "Arial", 15);
-        typingMenuItem = new cc.MenuItemLabel(typingLabel, function() {
+        menuItemList.push(new cc.MenuItemLabel(new cc.LabelTTF("[ csTypingLabel ]", "Arial", 15), function() {
             var scene = new csTypingLabelTestLayer();
             cc.director.runScene(scene);
-        }, this);
+        }, this));
 
-        typingExtLabel = new cc.LabelTTF("[ csTypingLabelExt ]", "Arial", 15);
-        typingExtMenuItem = new cc.MenuItemLabel(typingExtLabel, function() {
+        menuItemList.push(new cc.MenuItemLabel(new cc.LabelTTF("[ csTypingLabelExt ]", "Arial", 15), function() {
             var scene = new csTypingLabelExtTestLayer();
             cc.director.runScene(scene);
-        }, this);
+        }, this));
 
-        labelEXTLabel = new cc.LabelTTF("[ csLabelTTFExt ]", "Arial", 15);
-        labelEXTMenuItem = new cc.MenuItemLabel(labelEXTLabel, function() {
+        menuItemList.push(new cc.MenuItemLabel(new cc.LabelTTF("[ csLabelTTFExt ]", "Arial", 15), function() {
             var scene = new csLabelTTFExtTestLayer();
             cc.director.runScene(scene);
-        }, this);
+        }, this));
 
-        cryptoLabel = new cc.LabelTTF("[ csCrypto ]", "Arial", 15);
-        cryptoMenuItem = new cc.MenuItemLabel(cryptoLabel, function() {
+        menuItemList.push(new cc.MenuItemLabel(new cc.LabelTTF("[ csCrypto ]", "Arial", 15), function() {
             var scene = new csCryptoTestLayer();
             cc.director.runScene(scene);
-        }, this);
+        }, this));
 
-        alertLabel = new cc.LabelTTF("[ csAlert ]", "Arial", 15);
-        alertMenuItem = new cc.MenuItemLabel(alertLabel, function() {
+        menuItemList.push(new cc.MenuItemLabel(new cc.LabelTTF("[ csAlert ]", "Arial", 15), function() {
             var scene = new csAlertTestLayer();
             cc.director.runScene(scene);
-        }, this);
+        }, this));
 
-        videoLabel = new cc.LabelTTF("[ csVideo ]", "Arial", 15);
-        videoMenuItem = new cc.MenuItemLabel(videoLabel, function() {
+        menuItemList.push(new cc.MenuItemLabel(new cc.LabelTTF("[ csVideo ]", "Arial", 15), function() {
             var scene = new csVideoTestLayer();
             cc.director.runScene(scene);
-        }, this);
+        }, this));
 
-        iframeLabel = new cc.LabelTTF("[ csIframe ]", "Arial", 15);
-        iframeMenuItem = new cc.MenuItemLabel(iframeLabel, function() {
+        menuItemList.push(new cc.MenuItemLabel(new cc.LabelTTF("[ csIframe ]", "Arial", 15), function() {
             var scene = new csIframeTestLayer();
             cc.director.runScene(scene);
-        }, this);
+        }, this));
 
-        caaLabel = new cc.LabelTTF("[ csCanvasAntiAlising ]", "Arial", 15);
-        caaMenuItem = new cc.MenuItemLabel(caaLabel, function() {
+        menuItemList.push(new cc.MenuItemLabel(new cc.LabelTTF("[ csCanvasAntiAlising ]", "Arial", 15), function() {
             var scene = new csCanvasAntiAlisingTestLayer();
             cc.director.runScene(scene);
-        }, this);
+        }, this));
 
-        validatorLabel = new cc.LabelTTF("[ csValidator ]", "Arial", 15);
-        validatorMenuItem = new cc.MenuItemLabel(validatorLabel, function() {
+        menuItemList.push(new cc.MenuItemLabel(new cc.LabelTTF("[ csValidator ]", "Arial", 15), function() {
             var scene = new csValidatorTestLayer();
             cc.director.runScene(scene);
-        }, this);
+        }, this));
 
-        menu = new cc.Menu(toastMenuItem, pixelMenuItem, typingMenuItem, typingExtMenuItem, labelEXTMenuItem, cryptoMenuItem, alertMenuItem, videoMenuItem, iframeMenuItem, caaMenuItem, validatorMenuItem);
-        menu.alignItemsVerticallyWithPadding(15);
+        menuItemList.push(new cc.MenuItemLabel(new cc.LabelTTF("[ csMoment ]", "Arial", 15), function() {
+            var scene = new csMomentTestLayer();
+            cc.director.runScene(scene);
+        }, this));
+
+        menu = new cc.Menu(menuItemList);
+        menu.alignItemsVerticallyWithPadding(10);
         menu.x = winSize.width / 2;
         menu.y = winSize.height / 2;
 
@@ -107,4 +94,3 @@ var MainTestScene = cc.Scene.extend({
         this.addChild(layer);
     }
 });
-
