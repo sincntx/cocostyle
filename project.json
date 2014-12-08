@@ -22,6 +22,7 @@
         "src/csIframe.js",
         "frameworks/cocos2d-html5/extensions/editbox/CCdomNode.js",
         "src/csValidator.js",
+        "src/csMoment.js",
 
         "test/resource.js",
         "test/MainTestScene.js",
@@ -34,6 +35,7 @@
         "test/csAlertTest.js",
         "test/csVideoTest.js",
         "test/csIframeTest.js",
-        "test/csValidatorTest.js"
+        "test/csValidatorTest.js",
+        "test/csMomentTest.js"
     ]
 }
