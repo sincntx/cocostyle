@@ -17,6 +17,7 @@ cocostyle은 [cocos2d-js](https://github.com/cocos2d/cocos2d-js)의 UI 프레임
 |csIframe|스프라이트처럼 사용 가능한 iFrame.|
 |csCanvasAntiAlising|캔버스 안티 앨리어싱.|
 |csValidator|이메일, URL, IP, UUID 등 검증.|
+|csMoment|날짜의 검증, 파싱, 조작, 디스플레이.|
 
 ## 문서
 
@@ -41,6 +42,8 @@ cocostyle은 [cocos2d-js](https://github.com/cocos2d/cocos2d-js)의 UI 프레임
 - [csCanvasAntiAlising](doc/csCanvasAntiAlising_ko.md)
 
 - [csValidator](doc/csValidator_ko.md)
+
+- [csMoment](doc/csMoment_ko.md)
 
 ## 온라인 테스트 케이스
 
