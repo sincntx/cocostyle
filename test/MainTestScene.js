@@ -16,12 +16,13 @@ var MainTestLayer = cc.Layer.extend({
         title.y = winSize.height - 50;
         this.addChild(title);
 
-        this.menuItemList = [{title:'csButton',desc:'a simple and beautiful button.'},
+        this.menuItemList = [{title:'csButton',scene:'csButton',desc:'a simple and beautiful button.'},
             {title:'csToast',scene:'csToast',desc:'a quick little message.'},
-            {title:'csAlert',scene:'csAlet',desc:'a simple alert window.'},
+            {title:'csAlert',scene:'csAlert',desc:'a simple alert window.'},
             {title:'csTypingLabel',scene:'csTypingLabel',desc:'a label with typing effect.'},
             {title:'csTypingLBExt',scene:'csTypingLabelExt',desc:'a label with typing effect and font style.'},
             {title:'csLabelTTFExt',scene:'csLabelTTFExt',desc:'a label with font style(bold, italic and etc).'},
+            {title:'csPixelCol',scene:'csPixelCollision',desc:'pixel collision detection.'},
             {title:'csCrypto',scene:'csCrypto',desc:'MD5, SHA1, SHA256, AES and etc.'},
             {title:'csVideo',scene:'csVideo',desc:'a video player as cocos2d sprite.'},
             {title:'csIframe',scene:'csIframe',desc:'a iFrame as cocos2d sprite.'},
