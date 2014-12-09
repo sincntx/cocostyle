@@ -2,7 +2,7 @@
     "project_type": "javascript",
 
     "debugMode" : 1,
-    "showFPS" : true,
+    "showFPS" : false,
     "frameRate" : 60,
     "id" : "gameCanvas",
     "renderMode" : 1,
@@ -12,6 +12,7 @@
 
     "jsList" : [
         "src/csToast.js",
+        "src/csButton.js",
         "src/csPixelCollision.js",
         "src/csTypingLabel.js",
         "src/csTypingLabelExt.js",
@@ -22,11 +23,13 @@
         "src/csIframe.js",
         "frameworks/cocos2d-html5/extensions/editbox/CCdomNode.js",
         "src/csValidator.js",
+        "src/csCanvasAntiAlising.js",
         "src/csMoment.js",
 
         "test/resource.js",
         "test/MainTestScene.js",
         "test/csToastTest.js",
+        "test/csButtonTest.js",
         "test/csPixelCollisionTest.js",
         "test/csTypingLabelTest.js",
         "test/csTypingLabelExtTest.js",
@@ -36,6 +39,7 @@
         "test/csVideoTest.js",
         "test/csIframeTest.js",
         "test/csValidatorTest.js",
-        "test/csMomentTest.js"
+        "test/csCanvasAntiAlisingTest.js",
+        "test/csMomentTest.js",
     ]
 }
