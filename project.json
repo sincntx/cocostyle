@@ -40,6 +40,6 @@
         "test/csIframeTest.js",
         "test/csValidatorTest.js",
         "test/csCanvasAntiAlisingTest.js",
-        "test/csMomentTest.js",
+        "test/csMomentTest.js"
     ]
 }
