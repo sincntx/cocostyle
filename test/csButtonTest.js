@@ -14,7 +14,7 @@ var csButtonTestLayer = cc.Layer.extend({
 
         label = new cc.LabelTTF("[ Main Menu ]", "Arial", 15);
         menuItem = new cc.MenuItemLabel(label, function() {
-            var scene = new MainTestLayer();
+            var scene = new MainTestScene();
             cc.director.runScene(scene);
         }, this);
 
@@ -114,24 +114,6 @@ var csButtonTestLayer = cc.Layer.extend({
         btn10.y = winSize.height - 400;
 
         this.addChild(btn10);
-
-        /*btn11 = new csButton('press me', csButton.style.emptyrounded, csButton.size.normal, csButton.color.green, function() {
-            cc.log('click!');
-        }, this);
-
-        btn11.x = (winSize.width / 5) * 1 - 100;
-        btn11.y = winSize.height - 360;
-
-        this.addChild(btn11);
-
-        btn12 = new csButton('press me', csButton.style.rounded, csButton.size.normal, csButton.color.green, function() {
-            cc.log('click!');
-        }, this);
-
-        btn12.x = (winSize.width / 5) * 2 - 100;
-        btn12.y = winSize.height - 360;
-
-        this.addChild(btn12);*/
 
         return true;
     }
