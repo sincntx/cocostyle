@@ -4,7 +4,6 @@ var csPixelCollisionTestLayer = cc.Layer.extend({
     spriteLabel:null,
     ctor:function () {
         var winSize;
-        var toast;
         var label, menuItem, menu, title;
 
         this._super();
@@ -18,7 +17,7 @@ var csPixelCollisionTestLayer = cc.Layer.extend({
 
         label = new cc.LabelTTF("[ Main Menu ]", "Arial", 15);
         menuItem = new cc.MenuItemLabel(label, function() {
-            var scene = new MainTestLayer();
+            var scene = new MainTestScene();
             cc.director.runScene(scene);
         }, this);
 
@@ -29,17 +28,17 @@ var csPixelCollisionTestLayer = cc.Layer.extend({
         menuItem.y = 25;
         this.addChild(menu);
 
-        sprite1 = new cc.Sprite(res.Grosssini_png);
-        sprite1.setPosition(cc.p(winSize.width / 2, winSize.height / 2));
-        this.addChild(sprite1);
+        this.sprite1 = new cc.Sprite("res/grossini.png");
+        this.sprite1.setPosition(cc.p(winSize.width / 2, winSize.height / 2));
+        this.addChild(this.sprite1);
 
-        sprite2 = new cc.Sprite(res.Grosssini_png);
-        sprite2.setPosition(cc.p(100, winSize.height / 2));
-        this.addChild(sprite2);
+        this.sprite2 = new cc.Sprite("res/grossini.png");
+        this.sprite2.setPosition(cc.p(100, winSize.height / 2));
+        this.addChild(this.sprite2);
 
-        spriteLabel = new cc.LabelTTF("Touch and move", "Arial", 10);
-        spriteLabel.setAnchorPoint(cc.p(0, 1));
-        sprite2.addChild(spriteLabel);
+        this.spriteLabel = new cc.LabelTTF("Touch and move", "Arial", 10);
+        this.spriteLabel.setAnchorPoint(cc.p(0, 1));
+        this.sprite2.addChild(this.spriteLabel);
 
         if ('mouse' in cc.sys.capabilities)
             cc.eventManager.addListener({
@@ -68,18 +67,18 @@ var csPixelCollisionTestLayer = cc.Layer.extend({
     touchEvent:function (event) {
         var winSize = cc.director.getWinSize();
         var delta = event.getDelta();
-        var curPosition = cc.p(sprite2.x, sprite2.y);
+        var curPosition = cc.p(this.sprite2.x, this.sprite2.y);
         curPosition = cc.pAdd(curPosition, delta);
         curPosition = cc.pClamp(curPosition, cc.p(0, 0), cc.p(winSize.width, winSize.height));
-        sprite2.x = curPosition.x;
-        sprite2.y = curPosition.y;
+        this.sprite2.x = curPosition.x;
+        this.sprite2.y = curPosition.y;
         curPosition = null;
 
-        if(csPixelCollision(sprite1, sprite2)) {
-            spriteLabel.setColor(cc.color(255, 0, 0, 255));
+        if(csPixelCollision(this.sprite1, this.sprite2)) {
+            this.spriteLabel.setColor(cc.color(255, 0, 0, 255));
         }
         else {
-            spriteLabel.setColor(cc.color(255, 255, 255, 255));
+            this.spriteLabel.setColor(cc.color(255, 255, 255, 255));
         }
     }
 });
