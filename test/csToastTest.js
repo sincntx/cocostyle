@@ -14,7 +14,7 @@ var csToastTestLayer = cc.Layer.extend({
 
         label = new cc.LabelTTF("[ Main Menu ]", "Arial", 15);
         menuItem = new cc.MenuItemLabel(label, function() {
-            var scene = new MainTestLayer();
+            var scene = new MainTestScene();
             cc.director.runScene(scene);
         }, this);
 
