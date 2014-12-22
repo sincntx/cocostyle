@@ -14,7 +14,7 @@ var csAlertTestLayer = cc.Layer.extend({
 
         label = new cc.LabelTTF("[ Main Menu ]", "Arial", 15);
         menuItem = new cc.MenuItemLabel(label, function() {
-            var scene = new MainTestLayer();
+            var scene = new MainTestScene();
             cc.director.runScene(scene);
         }, this);
 
@@ -28,6 +28,7 @@ var csAlertTestLayer = cc.Layer.extend({
         alert = new csAlert('this is alert!', function() {
             this.removeFromParent();
         });
+
         this.addChild(alert);
 
         return true;
