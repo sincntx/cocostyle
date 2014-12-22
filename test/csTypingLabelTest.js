@@ -14,11 +14,11 @@ var csTypingLabelTestLayer = cc.Layer.extend({
 
         label = new cc.LabelTTF("[ Main Menu ]", "Arial", 15);
         menuItem = new cc.MenuItemLabel(label, function() {
-            var scene = new MainTestLayer();
+            var scene = new MainTestScene();
             cc.director.runScene(scene);
         }, this);
 
-        menu = cc.Menu.create(menuItem);
+        menu = new cc.Menu(menuItem);
         menu.x = 0;
         menu.y = 0;
         menuItem.x = winSize.width - 70;
