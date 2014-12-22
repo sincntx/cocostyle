@@ -1,16 +1,14 @@
 var MainTestLayer = cc.Layer.extend({
     menuItemList : null,
+    GAP : 180,
     ctor:function () {
-        var winSize;
-        var title;
-        var menuItemList, i;
-        var btn, label;
+        var winSize, title, i, btn, label, scene;
 
         this._super();
 
         winSize = cc.director.getWinSize();
 
-        title = new cc.Sprite(res.logo_png);
+        title = new cc.Sprite("res/cocostyle.png");
         title.scale = 0.7;
         title.x = 150;
         title.y = winSize.height - 50;
@@ -35,31 +33,85 @@ var MainTestLayer = cc.Layer.extend({
         scrollView.setDirection(ccui.ScrollView.DIR_VERTICAL);
         scrollView.setTouchEnabled(true);
         scrollView.setContentSize(cc.size(winSize.width, winSize.height));
-        var innerWidth = scrollView.width;
-        var innerHeight = this.menuItemList.length * 150;
-        scrollView.setInnerContainerSize(cc.size(innerWidth, innerHeight));
+        scrollView.setInnerContainerSize(cc.size(scrollView.width, this.menuItemList.length * this.GAP));
         this.addChild(scrollView);
 
         for(i = 0;i < this.menuItemList.length;i++) {
-            var btn = new csButton(this.menuItemList[i].title, csButton.style.emptycircle, csButton.size.large, csButton.color.orange, function(sender) {
-                var scene = eval('new ' + sender.parent.scene + 'TestLayer()');
+            btn = new csButton(this.menuItemList[i].title, csButton.style.emptycircle, csButton.size.large, csButton.color.orange, function(sender) {
+                var scene;
+
+                switch(sender.parent.scene) {
+                    case 'csButton':
+                        scene = new csButtonTestScene();
+                        break;
+                    case 'csToast':
+                        scene = new csToastTestScene();
+                        break;
+                    case 'csAlert':
+                        scene = new csAlertTestScene();
+                        break;
+                    case 'csTypingLabel':
+                        scene = new csTypingLabelTestScene();
+                        break;
+                    case 'csTypingLabelExt':
+                        scene = new csTypingLabelExtTestScene();
+                        break;
+                    case 'csLabelTTFExt':
+                        scene = new csLabelTTFExtTestScene();
+                        break;
+                    case 'csPixelCollision':
+                        scene = new csPixelCollisionTestScene();
+                        break;
+                    case 'csCrypto':
+                        scene = new csCryptoTestScene();
+                        break;
+                    case 'csVideo':
+                        scene = new csVideoTestScene();
+                        break;
+                    case 'csIframe':
+                        scene = new csIframeTestScene();
+                        break;
+                    case 'csCanvasAntiAlising':
+                        scene = new csCanvasAntiAlisingTestScene();
+                        break;
+                    case 'csValidator':
+                        scene = new csValidatorTestScene();
+                        break;
+                    case 'csMoment':
+                        scene = new csMomentTestScene();
+                        break;
+                }
+
                 cc.director.runScene(scene);
             }, btn);
 
             btn.scene = this.menuItemList[i].scene;
-            btn.labelItem.label.fontSize = 10;
-            btn.labelItem.width = btn.labelItem.label.width;
-            btn.labelItem.height = btn.labelItem.label.height;
-            btn.x = winSize.width /  2 - 60;
-            btn.y = (this.menuItemList.length * 150 - 100) - (i * 150);
+            btn._labelItem.label.fontSize = 12;
+            btn._labelItem.width = btn._labelItem.label.width;
+            btn._labelItem.height = btn._labelItem.label.height;
+            btn.x = winSize.width /  2.5;
+            btn.y = (this.menuItemList.length * this.GAP - (this.GAP / 1.2)) - (i * this.GAP);
             scrollView.addChild(btn);
 
-            label = new cc.LabelTTF(this.menuItemList[i].desc, "Arial", 10);
-            label.x = winSize.width / 2;
-            label.y = (this.menuItemList.length * 150 - 100) - (i * 150);
+            label = new cc.LabelTTF(this.menuItemList[i].desc, "Arial", 15);
+            label.x = winSize.width / 2.1;
+            label.y = (this.menuItemList.length * this.GAP - (this.GAP / 1.2)) - (i * this.GAP);
             label.anchorX = 0;
             scrollView.addChild(label);
         }
+
+        var label = new cc.LabelTTF("[ Main Menu ]", "Arial", 15);
+        var menuItem = new cc.MenuItemLabel(label, function() {
+            var scene = new MainTestLayer();
+            cc.director.runScene(scene);
+        }, this);
+        menu = cc.Menu.create(menuItem);
+        menu.x = 0;
+        menu.y = 0;
+        menuItem.x = winSize.width - 70;
+        menuItem.y = 25;
+        this.addChild(menu);
+
 
         return true;
     }
@@ -72,3 +124,4 @@ var MainTestScene = cc.Scene.extend({
         this.addChild(layer);
     }
 });
+
