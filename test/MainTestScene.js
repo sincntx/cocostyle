@@ -26,7 +26,8 @@ var MainTestLayer = cc.Layer.extend({
             {title:'csIframe',scene:'csIframe',desc:'a iFrame as cocos2d sprite.'},
             {title:'csAntiAlising',scene:'csCanvasAntiAlising',desc:'anti alising on canvas.'},
             {title:'csValidator',scene:'csValidator',desc:'validate email, url, credit card number and etc.'},
-            {title:'csMoment',scene:'csMoment',desc:'parse, validate, manipulate, and display dates.'}
+            {title:'csMoment',scene:'csMoment',desc:'parse, validate, manipulate, and display dates.'},
+            {title:'csVExpressions',scene:'csVerbalExpressions',desc:'helps to construct difficult regular expressions.'}
         ];
 
         var scrollView = new ccui.ScrollView();
@@ -80,6 +81,9 @@ var MainTestLayer = cc.Layer.extend({
                     case 'csMoment':
                         scene = new csMomentTestScene();
                         break;
+                    case 'csVerbalExpressions':
+                        scene = new csVerbalExpressionsTestScene();
+                        break;
                 }
 
                 cc.director.runScene(scene);
@@ -99,19 +103,6 @@ var MainTestLayer = cc.Layer.extend({
             label.anchorX = 0;
             scrollView.addChild(label);
         }
-
-        var label = new cc.LabelTTF("[ Main Menu ]", "Arial", 15);
-        var menuItem = new cc.MenuItemLabel(label, function() {
-            var scene = new MainTestLayer();
-            cc.director.runScene(scene);
-        }, this);
-        menu = cc.Menu.create(menuItem);
-        menu.x = 0;
-        menu.y = 0;
-        menuItem.x = winSize.width - 70;
-        menuItem.y = 25;
-        this.addChild(menu);
-
 
         return true;
     }
