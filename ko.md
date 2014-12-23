@@ -9,8 +9,6 @@ cocostyle은 [cocos2d-js](https://github.com/cocos2d/cocos2d-js)의 UI 프레임
 |csToast|짧은 메시지를 잠깐 보여줍니다.|
 |csPixelCollision|픽셀 단위 충돌 체크.|
 |csTypingLabel|타이핑하는 듯한 효과를 가진 라벨.|
-|csTypingLabelExt|폰트 스타일과 타이핑하는 듯한 효과를 가진 라벨.|
-|csLabelTTFExt|폰트 스타일 적용 가능한 라벨(굵은 글씨, 이탤릭체 등).|
 |csCrypto|MD5, SHA1, SHA256, AES 등 암호화/복호화.|
 |csAlert|간단한 경고창.|
 |csVideo|스프라이트처럼 사용 가능한 비디오 플레이어.|
