@@ -11,8 +11,6 @@ cocostyle은 [cocos2d-js](https://github.com/cocos2d/cocos2d-js)의 UI 프레임
 |csTypingLabel|타이핑하는 듯한 효과를 가진 라벨.|
 |csCrypto|MD5, SHA1, SHA256, AES 등 암호화/복호화.|
 |csAlert|간단한 경고창.|
-|csVideo|스프라이트처럼 사용 가능한 비디오 플레이어.|
-|csIframe|스프라이트처럼 사용 가능한 iFrame.|
 |csCanvasAntiAlising|캔버스 안티 앨리어싱.|
 |csValidator|이메일, URL, IP, UUID 등 검증.|
 |csMoment|날짜의 검증, 파싱, 조작, 디스플레이.|
