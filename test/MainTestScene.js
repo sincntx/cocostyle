@@ -18,12 +18,8 @@ var MainTestLayer = cc.Layer.extend({
             {title:'csToast',scene:'csToast',desc:'a quick little message.'},
             {title:'csAlert',scene:'csAlert',desc:'a simple alert window.'},
             {title:'csTypingLabel',scene:'csTypingLabel',desc:'a label with typing effect.'},
-            {title:'csTypingLBExt',scene:'csTypingLabelExt',desc:'a label with typing effect and font style.'},
-            {title:'csLabelTTFExt',scene:'csLabelTTFExt',desc:'a label with font style(bold, italic and etc).'},
             {title:'csPixelCol',scene:'csPixelCollision',desc:'pixel collision detection.'},
             {title:'csCrypto',scene:'csCrypto',desc:'MD5, SHA1, SHA256, AES and etc.'},
-            {title:'csVideo',scene:'csVideo',desc:'a video player as cocos2d sprite.'},
-            {title:'csIframe',scene:'csIframe',desc:'a iFrame as cocos2d sprite.'},
             {title:'csAntiAlising',scene:'csCanvasAntiAlising',desc:'anti alising on canvas.'},
             {title:'csValidator',scene:'csValidator',desc:'validate email, url, credit card number and etc.'},
             {title:'csMoment',scene:'csMoment',desc:'parse, validate, manipulate, and display dates.'},
@@ -54,23 +50,11 @@ var MainTestLayer = cc.Layer.extend({
                     case 'csTypingLabel':
                         scene = new csTypingLabelTestScene();
                         break;
-                    case 'csTypingLabelExt':
-                        scene = new csTypingLabelExtTestScene();
-                        break;
-                    case 'csLabelTTFExt':
-                        scene = new csLabelTTFExtTestScene();
-                        break;
                     case 'csPixelCollision':
                         scene = new csPixelCollisionTestScene();
                         break;
                     case 'csCrypto':
                         scene = new csCryptoTestScene();
-                        break;
-                    case 'csVideo':
-                        scene = new csVideoTestScene();
-                        break;
-                    case 'csIframe':
-                        scene = new csIframeTestScene();
                         break;
                     case 'csCanvasAntiAlising':
                         scene = new csCanvasAntiAlisingTestScene();
