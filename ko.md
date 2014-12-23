@@ -26,10 +26,6 @@ cocostyle은 [cocos2d-js](https://github.com/cocos2d/cocos2d-js)의 UI 프레임
 
 - [csTypingLabel](doc/csTypingLabel_ko.md)
 
-- [csTypingLabelExt](doc/csTypingLabelExt_ko.md)
-
-- [csLabelTTFExt](doc/csLabelTTFExt_ko.md)
-
 - [csCrypto](doc/csCrypto_ko.md)
 
 - [csAlert](doc/csAlert_ko.md)
