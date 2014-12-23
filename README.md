@@ -14,8 +14,6 @@ cocostyle is a UI framework for [cocos2d-js](https://github.com/cocos2d/cocos2d-
 |csTypingLabel|a label with typing effect.|
 |csCrypto|MD5, SHA1, SHA256, AES|
 |csAlert|a simple alert window.|
-|csVideo|a video player as cocos2d sprite.|
-|csIframe|a iFrame as cocos2d sprite.|
 |csCanvasAntiAlising|anti alising on canvas.|
 |csValidator|validate email, url, credit card number and etc.|
 |csMoment|parse, validate, manipulate, and display dates.|
