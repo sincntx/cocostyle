@@ -23,7 +23,8 @@ var MainTestLayer = cc.Layer.extend({
             {title:'csAntiAlising',scene:'csCanvasAntiAlising',desc:'anti alising on canvas.'},
             {title:'csValidator',scene:'csValidator',desc:'validate email, url, credit card number and etc.'},
             {title:'csMoment',scene:'csMoment',desc:'parse, validate, manipulate, and display dates.'},
-            {title:'csVExpressions',scene:'csVerbalExpressions',desc:'helps to construct difficult regular expressions.'}
+            {title:'csVExpressions',scene:'csVerbalExpressions',desc:'helps to construct difficult regular expressions.'},
+            {title:'csScrollBar',scene:'csScrollBar',desc:'ccui.ScrollView adds scroll bar and cursor.'}
         ];
 
         var scrollView = new ccui.ScrollView();
@@ -67,6 +68,9 @@ var MainTestLayer = cc.Layer.extend({
                         break;
                     case 'csVerbalExpressions':
                         scene = new csVerbalExpressionsTestScene();
+                        break;
+                    case 'csScrollBar':
+                        scene = new csScrollBarTestScene();
                         break;
                 }
 
