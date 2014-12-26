@@ -21,6 +21,7 @@
         "src/csCanvasAntiAlising.js",
         "src/csMoment.js",
         "src/csVerbalExpressions.js",
+        "src/csScrollBar.js",
 
         "test/resource.js",
         "test/MainTestScene.js",
@@ -33,6 +34,7 @@
         "test/csValidatorTest.js",
         "test/csCanvasAntiAlisingTest.js",
         "test/csMomentTest.js",
-        "test/csVerbalExpressionsTest.js"
+        "test/csVerbalExpressionsTest.js",
+        "test/csScrollBarTest.js"
     ]
 }
