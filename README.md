@@ -18,6 +18,7 @@ cocostyle is a UI framework for [cocos2d-js](https://github.com/cocos2d/cocos2d-
 |csValidator|validate email, url, credit card number and etc.|
 |csMoment|parse, validate, manipulate, and display dates.|
 |csButton|a simple and beautiful button.|
+|csScrollBar|a simple scroll bar with ccui.ScrollView.|
 
 ## Documentations
 
@@ -38,6 +39,8 @@ cocostyle is a UI framework for [cocos2d-js](https://github.com/cocos2d/cocos2d-
 - [csMoment](doc/csMoment.md)
 
 - [csButton](doc/csButton.md)
+
+- [csScrollBar](doc/csScrollBar.md)
 
 ## Online Test Cases
 
