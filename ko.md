@@ -15,6 +15,7 @@ cocostyle은 [cocos2d-js](https://github.com/cocos2d/cocos2d-js)의 UI 프레임
 |csValidator|이메일, URL, IP, UUID 등 검증.|
 |csMoment|날짜의 검증, 파싱, 조작, 디스플레이.|
 |csButton|간단하고 다양한 버튼.|
+|csScrollBar|ccui.ScrollView와 함께 사용할 수 있는 간단한 스크롤바.|
 
 ## 문서
 
@@ -39,6 +40,8 @@ cocostyle은 [cocos2d-js](https://github.com/cocos2d/cocos2d-js)의 UI 프레임
 - [csMoment](doc/csMoment_ko.md)
  
 - [csButton](doc/csButton_ko.md)
+
+- [csScrollBar](doc/csScrollBar_ko.md)
 
 ## 온라인 테스트 케이스
 
