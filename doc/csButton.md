@@ -17,4 +17,4 @@ this.addChild(btn1);
 ### Field
 - `size` : csButton.size.tiny, csButton.size.small, csButton.size.normal, csButton.size.large, csButton.size.jumbo
 - `style` : csButton.style.emptycirlcle, csButton.style.cirlcle, csButton.style.emptyrect, csButton.style.rect, csButton.style.emptyflat, csButton.style.flat
-- `colore` : csButton.color.transparent, csButton.color.white, csButton.color.blac, csButton.color.grey, csButton.color.red, csButton.color.blue, csButton.color.purple, csButton.color.orange
+- `color` : csButton.color.transparent, csButton.color.white, csButton.color.blac, csButton.color.grey, csButton.color.red, csButton.color.blue, csButton.color.purple, csButton.color.orange
