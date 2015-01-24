@@ -19,6 +19,7 @@ cocostyle is a UI framework for [cocos2d-js](https://github.com/cocos2d/cocos2d-
 |csMoment|parse, validate, manipulate, and display dates.|
 |csButton|a simple and beautiful button.|
 |csScrollBar|a simple scroll bar with ccui.ScrollView.|
+|csSpriteMask|simple way to mask a cc.Sprite.|
 
 ## Documentations
 
@@ -41,6 +42,8 @@ cocostyle is a UI framework for [cocos2d-js](https://github.com/cocos2d/cocos2d-
 - [csButton](doc/csButton.md)
 
 - [csScrollBar](doc/csScrollBar.md)
+
+- [csSpriteMask](doc/csSpriteMask.md)
 
 ## Online Test Cases
 
