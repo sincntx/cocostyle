@@ -2,7 +2,7 @@
     "project_type": "javascript",
 
     "debugMode" : 1,
-    "showFPS" : false,
+    "showFPS" : true,
     "frameRate" : 60,
     "id" : "gameCanvas",
     "renderMode" : 0,
@@ -25,6 +25,7 @@
         "src/csVerbalExpressionsTest.js",
         "src/csScrollBarTest.js",
         "src/csSpriteMaskTest.js",
+        "src/csFATest.js",
 
         "src/libs/csToast.js",
         "src/libs/csButton.js",
@@ -37,6 +38,7 @@
         "src/libs/csMoment.js",
         "src/libs/csVerbalExpressions.js",
         "src/libs/csScrollBar.js",
-        "src/libs/csSpriteMask.js"
+        "src/libs/csSpriteMask.js",
+        "src/libs/csFA.js"
     ]
 }
