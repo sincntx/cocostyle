@@ -25,7 +25,8 @@ var MainTestLayer = cc.Layer.extend({
             {title:'csMoment',scene:'csMoment',desc:'parse, validate, manipulate, and display dates.'},
             {title:'csVExpressions',scene:'csVerbalExpressions',desc:'helps to construct difficult regular expressions.'},
             {title:'csScrollBar',scene:'csScrollBar',desc:'ccui.ScrollView adds scroll bar and cursor.'},
-            {title:'csSpriteMask',scene:'csSpriteMask',desc:'simple way to mask a cc.Sprite.'}
+            {title:'csSpriteMask',scene:'csSpriteMask',desc:'simple way to mask a cc.Sprite.'},
+            {title:'csFA',scene:'csFA',desc:'font awesome'}
         ];
 
         var scrollView = new ccui.ScrollView();
@@ -75,6 +76,9 @@ var MainTestLayer = cc.Layer.extend({
                         break;
                     case 'csSpriteMask':
                         scene = new csSpriteMaskTestScene();
+                        break;
+                    case 'csFA':
+                        scene = new csFATestScene();
                         break;
                 }
 
