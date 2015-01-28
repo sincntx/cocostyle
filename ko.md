@@ -16,7 +16,8 @@ cocostyle은 [cocos2d-js](https://github.com/cocos2d/cocos2d-js)의 UI 프레임
 |csMoment|날짜의 검증, 파싱, 조작, 디스플레이.|
 |csButton|간단하고 다양한 버튼.|
 |csScrollBar|ccui.ScrollView와 함께 사용할 수 있는 간단한 스크롤바.|
-|csScrollBar|cc.Sprite를 간단하게 마스크 처리.|
+|csSpriteMask|cc.Sprite를 간단하게 마스크 처리.|
+|csFA|Font Awesome을 쉽게 사용.|
 
 ## 문서
 
@@ -45,6 +46,8 @@ cocostyle은 [cocos2d-js](https://github.com/cocos2d/cocos2d-js)의 UI 프레임
 - [csScrollBar](doc/csScrollBar_ko.md)
 
 - [csSpriteMask](doc/csSpriteMask_ko.md)
+
+- [csFA](doc/csFA_ko.md)
 
 ## 온라인 테스트 케이스
 
