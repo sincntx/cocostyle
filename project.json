@@ -26,6 +26,7 @@
         "src/csScrollBarTest.js",
         "src/csSpriteMaskTest.js",
         "src/csFATest.js",
+        "src/csFAButtonTest.js",
 
         "src/libs/csToast.js",
         "src/libs/csButton.js",
@@ -39,6 +40,7 @@
         "src/libs/csVerbalExpressions.js",
         "src/libs/csScrollBar.js",
         "src/libs/csSpriteMask.js",
-        "src/libs/csFA.js"
+        "src/libs/csFA.js",
+        "src/libs/csFAButton.js"
     ]
 }
