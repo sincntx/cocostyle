@@ -108,6 +108,6 @@ var csFAButton = cc.Menu.extend({
     }
 });
 
-csButton.style = {emptycircle:0, circle:1, emptyrect:2, rect:3, emptyflat:4, flat:5};
-csButton.size = {tiny:15, small:20, normal:30, large:50, jumbo:60};
-csButton.color = {transparent:cc.color(255,255,255,255), white:cc.color(255,255,255,255), black:cc.color(0,0,0,255), grey:cc.color(100,100,100,255), blue:cc.color(0,161,203,255), green:cc.color(148,193,46,255),orange:cc.color(241,141,5,255),red:cc.color(229,64,40,255),purple:cc.color(135,49,140,255)};
+csFAButton.style = {emptycircle:0, circle:1, emptyrect:2, rect:3, emptyflat:4, flat:5};
+csFAButton.size = {tiny:15, small:20, normal:30, large:50, jumbo:60};
+csFAButton.color = {transparent:cc.color(255,255,255,255), white:cc.color(255,255,255,255), black:cc.color(0,0,0,255), grey:cc.color(100,100,100,255), blue:cc.color(0,161,203,255), green:cc.color(148,193,46,255),orange:cc.color(241,141,5,255),red:cc.color(229,64,40,255),purple:cc.color(135,49,140,255)};
