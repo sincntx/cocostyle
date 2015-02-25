@@ -26,7 +26,7 @@ var csVerbalExpressionsTestLayer = cc.Layer.extend({
         menuItem.y = 25;
         this.addChild(menu);
 
-        var tester = csVerbalExpressions()
+        var tester = new csVerbalExpressions()
             .startOfLine()
             .then( "http" )
             .maybe( "s" )
@@ -37,12 +37,12 @@ var csVerbalExpressionsTestLayer = cc.Layer.extend({
 
         var testMe = "https://www.google.com";
 
-        tl1 = new cc.LabelTTF(tester.test(testMe), "Arial", 15);
+        tl1 = new cc.LabelTTF(tester.RegExp.test(testMe), "Arial", 15);
         tl1.x = winSize.width / 2;
         tl1.y = winSize.height / 2 - 10;
         this.addChild(tl1);
 
-        var result = csVerbalExpressions().find( "red" ).replace( "We have a red house", "blue" );
+        var result = tester.find( "red" ).replace( "We have a red house", "blue" );
 
         tl2 = new cc.LabelTTF(result, "Arial", 15);
         tl2.x = winSize.width / 2;
@@ -60,4 +60,3 @@ var csVerbalExpressionsTestScene = cc.Scene.extend({
         this.addChild(layer);
     }
 });
-

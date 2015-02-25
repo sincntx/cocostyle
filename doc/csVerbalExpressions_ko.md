@@ -4,7 +4,7 @@ csVerbalExpressions
 ### 시작하기
 
 ```
-var tester = csVerbalExpressions()
+var tester = new csVerbalExpressions()
             .startOfLine()
             .then( "http" )
             .maybe( "s" )
@@ -13,10 +13,13 @@ var tester = csVerbalExpressions()
             .anythingBut( " " )
             .endOfLine();
 
-        var testMe = "https://www.google.com";
-
-        tl1 = new cc.LabelTTF(tester.test(testMe), "Arial", 15);
+        tl1 = new cc.LabelTTF(tester.RegExp.test("https://www.google.com"), "Arial", 15);
         this.addChild(tl1);
+
+        var result = tester.find( "red" ).replace( "We have a red house", "blue" );
+
+        tl2 = new cc.LabelTTF(result, "Arial", 15);
+        this.addChild(tl2);
 ```
 
 ### JSVerbalExpressions
