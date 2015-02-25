@@ -14,11 +14,13 @@ cocostyle은 [cocos2d-js](https://github.com/cocos2d/cocos2d-js)의 UI 프레임
 |csCanvasAntiAlising|캔버스 안티 앨리어싱.|
 |csValidator|이메일, URL, IP, UUID 등 검증.|
 |csMoment|날짜의 검증, 파싱, 조작, 디스플레이.|
+|csVerbalExpressions|정규 표현식을 쉽게 사용.|
 |csButton|간단하고 다양한 버튼.|
 |csScrollBar|ccui.ScrollView와 함께 사용할 수 있는 간단한 스크롤바.|
 |csSpriteMask|cc.Sprite를 간단하게 마스크 처리.|
 |csFA|Font Awesome을 쉽게 사용.|
 |csFAButton|Font Awesome을 사용하게 쉽게 버튼 생성.|
+|csMustache|Mustache를 쉽게 사용.|
 
 ## 문서
 
@@ -41,6 +43,8 @@ cocostyle은 [cocos2d-js](https://github.com/cocos2d/cocos2d-js)의 UI 프레임
 - [csValidator](doc/csValidator_ko.md)
 
 - [csMoment](doc/csMoment_ko.md)
+
+- [csVerbalExpressions](doc/csVerbalExpressions_ko.md)
  
 - [csButton](doc/csButton_ko.md)
 
@@ -51,6 +55,8 @@ cocostyle은 [cocos2d-js](https://github.com/cocos2d/cocos2d-js)의 UI 프레임
 - [csFA](doc/csFA_ko.md)
 
 - [csFAButton](doc/csFAButton_ko.md)
+
+- [csMustache](doc/csMustache_ko.md)
 
 ## 온라인 테스트 케이스
 
