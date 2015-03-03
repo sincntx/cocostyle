@@ -28,6 +28,7 @@
         "src/csFATest.js",
         "src/csFAButtonTest.js",
         "src/csMustacheTest.js",
+        "src/csNumeralTest.js",
 
         "src/libs/csToast.js",
         "src/libs/csButton.js",
@@ -43,6 +44,7 @@
         "src/libs/csSpriteMask.js",
         "src/libs/csFA.js",
         "src/libs/csFAButton.js",
-        "src/libs/csMustache.js"
+        "src/libs/csMustache.js",
+        "src/libs/csNumeral.js"
     ]
 }

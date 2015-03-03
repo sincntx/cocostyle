@@ -21,6 +21,7 @@ cocostyle은 [cocos2d-js](https://github.com/cocos2d/cocos2d-js)의 UI 프레임
 |csFA|Font Awesome을 쉽게 사용.|
 |csFAButton|Font Awesome을 사용하게 쉽게 버튼 생성.|
 |csMustache|Mustache를 쉽게 사용.|
+|csNumeral|Numeral를 쉽게 사용.|
 
 ## 문서
 
@@ -57,6 +58,8 @@ cocostyle은 [cocos2d-js](https://github.com/cocos2d/cocos2d-js)의 UI 프레임
 - [csFAButton](doc/csFAButton_ko.md)
 
 - [csMustache](doc/csMustache_ko.md)
+
+- [csNumeral](doc/csNumeral_ko.md)
 
 ## 온라인 테스트 케이스
 

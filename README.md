@@ -24,6 +24,7 @@ cocostyle is a UI framework for [cocos2d-js](https://github.com/cocos2d/cocos2d-
 |csFA|a simple way to use Font Awesome.|
 |csFAButton|simple way to use Font Awesome with csButton.|
 |csMustache|simple way to use Mustache.|
+|csNumeral|simple way to use Numeral.|
 
 ## Documentations
 
@@ -56,6 +57,8 @@ cocostyle is a UI framework for [cocos2d-js](https://github.com/cocos2d/cocos2d-
 - [csFAButton](doc/csFAButton.md)
 
 - [csMustache](doc/csMustache.md)
+
+- [csNumeral](doc/csNumeral.md)
 
 ## Online Test Cases
 

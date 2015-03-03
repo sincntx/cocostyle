@@ -28,7 +28,8 @@ var MainTestLayer = cc.Layer.extend({
             {title:'csSpriteMask',scene:'csSpriteMask',desc:'simple way to mask a cc.Sprite.'},
             {title:'csFA',scene:'csFA',desc:'simple way to use Font Awesome'},
             {title:'csFAButton',scene:'csFAButton',desc:'simple way to use Font Awesome with csButton'},
-            {title:'csMustache',scene:'csMustache',desc:'simple way to use Mustache'}
+            {title:'csMustache',scene:'csMustache',desc:'simple way to use Mustache'},
+            {title:'csNumeral',scene:'csNumeral',desc:'simple way to use Numeral'}
         ];
 
         var scrollView = new ccui.ScrollView();
@@ -87,6 +88,9 @@ var MainTestLayer = cc.Layer.extend({
                         break;
                     case 'csMustache':
                         scene = new csMustacheTestScene();
+                        break;
+                    case 'csNumeral':
+                        scene = new csNumeralTestScene();
                         break;
                 }
 
